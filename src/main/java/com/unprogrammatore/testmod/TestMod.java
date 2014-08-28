@@ -1,5 +1,8 @@
 package com.unprogrammatore.testmod;
 
+import com.unprogrammatore.testmod.proxy.*;
+
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -10,6 +13,9 @@ public class TestMod {
 	
 	@Mod.Instance("TestMod")
 	public static TestMod inst;
+
+	@SidedProxy(clientSide = "com.unprogrammatore.testmod.proxy.ClientProxy", serverSide = "com.unprogrammatore.testmod.proxy.ServerProxy")
+	public static IProxy proxy;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
