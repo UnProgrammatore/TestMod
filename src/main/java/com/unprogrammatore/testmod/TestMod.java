@@ -1,6 +1,7 @@
 package com.unprogrammatore.testmod;
 
 import com.unprogrammatore.testmod.proxy.*;
+import com.unprogrammatore.testmod.values.*;
 
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod;
@@ -8,7 +9,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
-@Mod(modid = "TestMod", name = "Test Mod", version="1.7.10-1.0")
+@Mod(modid = ModInfo.MOD_ID, name = ModInfo.MOD_NAME, version = ModInfo.VERSION)
 public class TestMod {
 	
 	@Mod.Instance("TestMod")
@@ -19,7 +20,7 @@ public class TestMod {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("anacleto");
+
 	}
 
 	@Mod.EventHandler
