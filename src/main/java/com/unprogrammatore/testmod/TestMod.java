@@ -15,7 +15,7 @@ public class TestMod {
 	@Mod.Instance("TestMod")
 	public static TestMod inst;
 
-	@SidedProxy(clientSide = "com.unprogrammatore.testmod.proxy.ClientProxy", serverSide = "com.unprogrammatore.testmod.proxy.ServerProxy")
+	@SidedProxy(clientSide = ModInfo.CLIENT_PROXY, serverSide = ModInfo.SERVER_PROXY)
 	public static IProxy proxy;
 
 	@Mod.EventHandler
