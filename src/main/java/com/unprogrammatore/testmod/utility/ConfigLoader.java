@@ -7,20 +7,18 @@ import com.unprogrammatore.testmod.values.ConfigValues;
 import java.io.File;
 
 public class ConfigLoader {
-	public static ConfigValues load(File f) {
+	public static void load(File f) {
 		Configuration cfg = new Configuration(f);
-		ConfigValues toret = new ConfigValues();
 		try {
 			cfg.load();
 
-			toret.howManyTimes = cfg.getInt("howManyTimes", "TestCategory", 3, 0, 100, "How many times...");
+			ConfigValues.howManyTimes = cfg.getInt("howManyTimes", "TestCategory", 3, 0, 100, "How many times...");
 		}
 		catch(Exception E) {
-			// Adding log
+			// Add log
 		}
 		finally {
 			cfg.save();
 		}
-		return toret;
 	}
 }

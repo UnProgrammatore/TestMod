@@ -21,12 +21,10 @@ public class TestMod {
 	@SidedProxy(clientSide = ModInfo.CLIENT_PROXY, serverSide = ModInfo.SERVER_PROXY)
 	public static IProxy proxy;
 
-	ConfigValues cfg;
-
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		File configFile = event.getSuggestedConfigurationFile();
-		cfg = ConfigLoader.load(configFile);
+		ConfigLoader.load(configFile);
 
 	}
 
@@ -37,7 +35,7 @@ public class TestMod {
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event){
 		int i;
-		for(i = 0; i < cfg.howManyTimes; i++) {
+		for(i = 0; i < ConfigValues.howManyTimes; i++) {
 			System.out.print("knock ");
 		}
 		System.out.println("Penny!");
