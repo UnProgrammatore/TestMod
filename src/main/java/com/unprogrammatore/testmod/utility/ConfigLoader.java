@@ -20,7 +20,7 @@ public class ConfigLoader {
 			cfg.load();
 		}
 		catch(Exception E) {
-			// TODO Add log
+			Logger.error("Unable to load configuration");
 		}
 		load();
 		if(cfg.hasChanged())

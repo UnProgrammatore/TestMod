@@ -41,5 +41,6 @@ public class TestMod {
 			System.out.print("knock ");
 		}
 		System.out.println("Penny!");
+		Logger.info("Just printed out something");
 	}
 }
