@@ -4,6 +4,7 @@ import com.unprogrammatore.testmod.proxy.*;
 import com.unprogrammatore.testmod.values.*;
 import com.unprogrammatore.testmod.utility.*;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -12,7 +13,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
 import java.io.File;
 
-@Mod(modid = ModInfo.MOD_ID, name = ModInfo.MOD_NAME, version = ModInfo.VERSION)
+@Mod(modid = ModInfo.MOD_ID, name = ModInfo.MOD_NAME, version = ModInfo.VERSION, guiFactory = ModInfo.GUI_FACTORY)
 public class TestMod {
 	
 	@Mod.Instance(ModInfo.MOD_ID)
@@ -24,12 +25,13 @@ public class TestMod {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		File configFile = event.getSuggestedConfigurationFile();
-		ConfigLoader.load(configFile);
+		ConfigLoader.init(configFile);
 
 	}
 
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event){
+		FMLCommonHandler.instance().bus().register(new ConfigLoader());
 	}
 
 	@Mod.EventHandler
