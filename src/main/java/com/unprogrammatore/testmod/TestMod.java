@@ -1,5 +1,6 @@
 package com.unprogrammatore.testmod;
 
+import com.unprogrammatore.testmod.items.ModItems;
 import com.unprogrammatore.testmod.proxy.*;
 import com.unprogrammatore.testmod.values.*;
 import com.unprogrammatore.testmod.utility.*;
@@ -32,6 +33,7 @@ public class TestMod {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event){
 		FMLCommonHandler.instance().bus().register(new ConfigLoader());
+		ModItems.init();
 	}
 
 	@Mod.EventHandler
