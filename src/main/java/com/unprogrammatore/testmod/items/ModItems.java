@@ -5,9 +5,10 @@ import net.minecraft.item.Item;
 
 public class ModItems {
 	
-	public static final Item diamondDagger = new ItemDiamondDagger();
+	public static Item diamondDagger;
 	
 	public static void init() {
+		diamondDagger = new ItemDiamondDagger();
 		GameRegistry.registerItem(diamondDagger, "diamondDagger");
 	}
 }

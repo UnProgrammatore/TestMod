@@ -10,7 +10,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemDiamondDagger extends ItemModded {
 	
 	public ItemDiamondDagger() {
-		setUnlocalizedName("diamondDagger");
+		setUnlocalizedName("diamondDagger");	
 	}
 
 }
